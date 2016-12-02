@@ -1,8 +1,15 @@
+configurations
+{
+    Toolset {
+        key : "PlatformToolset";
+        choices: { v140, v140_xp, v120, v120_xp, };
+    };
+}
 nuget
 {
     nuspec
     {
-        id = bonsai.gtest;
+        id = bonsai.gtest-msvc-14;
         version : 1.7.0;
         title: Google Test;
         authors: { Google };      
@@ -23,7 +30,7 @@ nuget
                        options for running the tests, and XML test report 
                        generation. 
                        This nuget package includes static and shared binaries 
-                       for 32 and 64 bit architectures and for v120 platform 
+                       for 32 and 64 bit architectures and for v140 platform 
                        toolsets. Supports both Visual Studio and CMake.";
         copyright: Copyright 2013;
         tags: { native, CoApp, gtest, google test, commandline, cmake };
@@ -52,7 +59,7 @@ nuget
             ".\*.cmake";     
         };
            
-        ("x64,Win32", "v120", "Debug,Release", "static, dynamic") => {
+        ("x64,Win32", "v140", "Debug,Release", "static, dynamic") => {
             [${0},${1},${2},dynamic] {  
                 lib: {    
                     #destination = ${build_root}\lib\${0}\${1}\dynamic\${2};
