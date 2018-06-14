@@ -16,6 +16,11 @@
 #
 # This must be a macro(), as inside a function string() can only
 # update variables in the function scope.
+#
+# Materials from
+# https://gitlab.kitware.com/cmake/community/wikis/FAQ#dynamic-replace licensed
+# under the Creative Commons Attribution 2.5 Generic License 
+# https://creativecommons.org/licenses/by/2.5/
 macro(fix_default_compiler_settings_)
   if (MSVC)
     # For MSVC, CMake sets certain flags to defaults we want to override.
